@@ -8,6 +8,7 @@
 
 try:
     import undetected_chromedriver as uc
+    from webdriver_manager.chrome import ChromeDriverManager
     from colorama import Fore, init, Style
     import ctypes, platform, os, time
     import selenium, requests, webbrowser
@@ -43,6 +44,7 @@ class zefoy:
             "favorites": "/html/body/div[4]/div[1]/div[3]/div[2]/div[6]/div/button"
         }
         self.discord = "https://pastebin.com/raw/uB8UYqdh"
+        self.driver = webdriver.Chrome(executable_path = ChromeDriverManager.install(),options = options )
         
     def main(self):
         os.system(self.clear)
